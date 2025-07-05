@@ -1,6 +1,15 @@
 # arzu-toast-modal 🔔
 
 Beautiful and customizable toast component for React with smooth animations 🚀
+## 🎨 Design
+
+[Figma Design File (Click to view)](https://www.figma.com/community/file/1523304266707961935)
+
+## 🖼 Preview
+<img src="https://raw.githubusercontent.com/arzummammadova/arzu-toast-modal/main/src/assets/page.png" />
+
+<img src="./src/assets/page.png" alt="Toast Example 1" width="600" />
+<img src="./src/assets/page1.png" alt="Toast Example 2" width="600" />
 
 [![npm version](https://img.shields.io/npm/v/arzu-toast-modal.svg?style=flat-square)](https://www.npmjs.com/package/arzu-toast-modal)
 [![license](https://img.shields.io/github/license/arzummammadova/arzu-toast-modal.svg?style=flat-square)](LICENSE)
