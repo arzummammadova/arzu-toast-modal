@@ -11,15 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* ---------- Rəng dəyişənləri (Tailwind rənglərinə uyğun) ---------- */
 :root {
-  --green-500: #22c55e;
-  --green-600: #16a34a;
-  --red-500: #ef4444;
+  --green-500: #63cd8a;
+  --green-600: #8befb0;
+  --red-500: #c16666;
   --red-600: #dc2626;
-  --amber-500: #f59e0b;
+  --amber-500: #eec47b;
   --amber-600: #d97706;
-  --blue-500: #3b82f6;
+  --blue-500: #6da0f2;
   --blue-600: #2563eb;
   --slate-50: #f8fafc;
   --gray-100: #f3f4f6;
@@ -30,7 +29,6 @@ code {
   --gray-900: #111827;
 }
 
-/* ---------- Səhifə fonu və mərkəzləşdirmə ---------- */
 .page {
   min-height: 100vh;
   display: flex;
@@ -40,7 +38,6 @@ code {
   background: linear-gradient(to bottom right, var(--slate-50), var(--gray-100));
 }
 
-/* ---------- Daxili maksimum en ---------- */
 .content {
   width: 100%;
   max-width: 42rem; /* 2xl ≃ 672px */
@@ -55,7 +52,7 @@ code {
 .header__icon {
   width: 2rem;   /* h-8 w-8 */
   height: 2rem;
-  color: #4f46e5; /* indigo-600 in Tailwind */
+  color: #d47fe0; /* indigo-600 in Tailwind */
   margin-right: 0.5rem;
 }
 
@@ -109,7 +106,7 @@ code {
   justify-content: center;
   padding: 1rem 1.5rem;  /* py-4 px-6 */
   border: none;
-  border-radius: 0.75rem; /* rounded-xl */
+  border-radius: 0.4rem; /* rounded-xl */
   font-size: 1rem;
   font-weight: 500;
   color: #fff;

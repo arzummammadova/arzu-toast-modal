@@ -17,7 +17,7 @@
     "alert",
     "modal"
   ],
-  "author": "Your Name <your.email@example.com>",
+  "author": "Arzui <arzuuimammadova@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
@@ -44,10 +44,10 @@
   "description": "A beautiful and customizable toast notification component for React applications",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/arzu-toast-modal.git"
+    "url": "git+https://github.com/arzummammadova/arzu-toast-modal.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/arzu-toast-modal/issues"
+    "url": "https://github.com/arzummammadova/arzu-toast-modal/issues"
   },
-  "homepage": "https://github.com/yourusername/arzu-toast-modal#readme"
+  "homepage": "https://github.com/arzummammadova/arzu-toast-modal#readme"
 }
