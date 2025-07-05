@@ -3,7 +3,7 @@
 Beautiful and customizable toast component for React with smooth animations 🚀
 
 [![npm version](https://img.shields.io/npm/v/arzu-toast-modal.svg?style=flat-square)](https://www.npmjs.com/package/arzu-toast-modal)
-[![license](https://img.shields.io/github/license/YOUR-USERNAME/arzu-toast-modal.svg?style=flat-square)](LICENSE)
+[![license](https://img.shields.io/github/license/arzummammadova/arzu-toast-modal.svg?style=flat-square)](LICENSE)
 
 ## 📽 Demo
 
@@ -50,7 +50,7 @@ export default function App() {
 }
 ```
 
-## ⚙️ API
+## ⚙️
 
 | Property   | Type                                                           | Default       | Description                              |
 | ---------- | -------------------------------------------------------------- | ------------- | ---------------------------------------- |
@@ -74,6 +74,5 @@ export default function App() {
 
 Feel free to open issues or PRs!
 
-## 🪪 License
-
-MIT © 2025 Arzu Məmmədova
+##
+ © 2025 Arzu Məmmədova
