@@ -4,7 +4,7 @@ Beautiful and customizable toast component with animated visuals 🚀
 
 ## 📽 Demo
 
-<video src="assets/demo.mp4" controls width="100%" />
+<video src="./src/assets/demo.mp4" controls width="100%" />
 
 ## 📦 Install
 
