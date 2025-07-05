@@ -16,7 +16,7 @@ Beautiful and customizable toast component for React with smooth animations 🚀
 ## 🖼 Preview
 
 <img src="./src/assets/page.png" alt="Toast Example 1" width="600" height="300" />
-<img src="./src/assets/page1.png" alt="Toast Example 2" width="600" />
+<img src="./src/assets/page1.png" alt="Toast Example 2" width="600" height="300" />
 
 <!-- If you create a GIF preview, place it in .github/demo.gif and uncomment the line below -->
 
