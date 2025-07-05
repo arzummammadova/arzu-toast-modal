@@ -6,3 +6,4 @@ interface ModalProps {
 }
 export declare const Modal: React.FC<ModalProps>;
 export {};
+//# sourceMappingURL=Modal.d.ts.map

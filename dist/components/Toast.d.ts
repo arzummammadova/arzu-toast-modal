@@ -1,7 +1,14 @@
 import React from 'react';
-interface ToastProps {
+export interface ToastProps {
+    title?: string;
     message: string;
-    type?: 'success' | 'error' | 'info';
+    duration?: number;
+    type?: 'success' | 'error' | 'warning' | 'info';
+    position?: 'top-right' | 'top-center' | 'top-left' | 'bottom-right' | 'bottom-center' | 'bottom-left';
+    onClose?: () => void;
+    className?: string;
+    style?: React.CSSProperties;
 }
 export declare const Toast: React.FC<ToastProps>;
-export {};
+export default Toast;
+//# sourceMappingURL=Toast.d.ts.map

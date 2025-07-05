@@ -20,3 +20,4 @@ export const Modal = ({ isOpen, onClose, children }) => {
                 minWidth: '300px',
             }, children: children }) }));
 };
+//# sourceMappingURL=Modal.js.map

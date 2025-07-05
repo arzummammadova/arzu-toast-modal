@@ -1,30 +1,47 @@
 {
   "name": "arzu-toast-modal",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
-  "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build"
-  },
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+  "scripts": {
+    "build": "tsc && cpx \"src/assets/**/*\" dist/assets",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "react",
+    "toast",
+    "notification",
+    "alert",
+    "modal"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react-icons": "^5.5.0"
+  },
+  "files": [
+    "dist",
+    "dist/assets"
+  ],
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@types/react": "^19.1.8",
-    "@types/react-dom": "^19.1.6",
-    "typescript": "^5.8.3"
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "cpx": "^1.5.0",
+    "typescript": "^5.3.3"
   },
-  "directories": {
-    "example": "example"
+  "description": "A beautiful and customizable toast notification component for React applications",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/arzu-toast-modal.git"
   },
-  "description": ""
+  "bugs": {
+    "url": "https://github.com/yourusername/arzu-toast-modal/issues"
+  },
+  "homepage": "https://github.com/yourusername/arzu-toast-modal#readme"
 }
