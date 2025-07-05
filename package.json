@@ -1,9 +1,10 @@
 {
   "name": "arzu-toast-modal",
-  "version": "1.1.1",
+  "version": "1.1.5",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "start": "GENERATE_SOURCEMAP=false react-scripts start",
   "scripts": {
     "build": "tsc && cpx \"src/assets/**/*\" dist/assets",
     "prepublishOnly": "npm run build",
@@ -19,6 +20,8 @@
   "author": "Your Name <your.email@example.com>",
   "license": "MIT",
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "lucide-react": "^0.525.0",
     "react-icons": "^5.5.0"
   },
   "files": [
@@ -32,7 +35,10 @@
   "devDependencies": {
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",
+    "autoprefixer": "^10.4.21",
     "cpx": "^1.5.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.3.3"
   },
   "description": "A beautiful and customizable toast notification component for React applications",

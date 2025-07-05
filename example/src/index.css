@@ -11,3 +11,153 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* ---------- Rəng dəyişənləri (Tailwind rənglərinə uyğun) ---------- */
+:root {
+  --green-500: #22c55e;
+  --green-600: #16a34a;
+  --red-500: #ef4444;
+  --red-600: #dc2626;
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --slate-50: #f8fafc;
+  --gray-100: #f3f4f6;
+  --gray-50: #f9fafb;
+  --gray-200: #e5e7eb;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+/* ---------- Səhifə fonu və mərkəzləşdirmə ---------- */
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* p-8 */
+  background: linear-gradient(to bottom right, var(--slate-50), var(--gray-100));
+}
+
+/* ---------- Daxili maksimum en ---------- */
+.content {
+  width: 100%;
+  max-width: 42rem; /* 2xl ≃ 672px */
+}
+
+/* ---------- Başlıq bölməsi ---------- */
+.header {
+  text-align: center;
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+.header__icon {
+  width: 2rem;   /* h-8 w-8 */
+  height: 2rem;
+  color: #4f46e5; /* indigo-600 in Tailwind */
+  margin-right: 0.5rem;
+}
+
+.header__title {
+  display: inline-block;
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.header__subtitle {
+  margin: 0.75rem auto 0;
+  max-width: 28rem;
+  font-size: 1.125rem; /* text-lg */
+  color: var(--gray-600);
+}
+
+/* ---------- Kart ---------- */
+.card {
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  border-radius: 1rem; /* rounded-2xl */
+  padding: 2rem;       /* p-8 */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .1); /* shadow-xl */
+}
+
+.card__title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600;
+  color: var(--gray-800);
+  text-align: center;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* ---------- Düymə şəbəkəsi ---------- */
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;           /* gap-4 */
+
+  /* md:grid-cols-2 */
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Ümumi düymə üslubu ---------- */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;  /* py-4 px-6 */
+  border: none;
+  border-radius: 0.75rem; /* rounded-xl */
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, .18); /* shadow-lg */
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, .25); /* hover:shadow-xl */
+}
+
+/* ---------- Rəng variantları ---------- */
+.btn-success { background: var(--green-500); }
+.btn-success:hover { background: var(--green-600); }
+
+.btn-error { background: var(--red-500); }
+.btn-error:hover { background: var(--red-600); }
+
+.btn-warning { background: var(--amber-500); }
+.btn-warning:hover { background: var(--amber-600); }
+
+.btn-info { background: var(--blue-500); }
+.btn-info:hover { background: var(--blue-600); }
+
+/* ---------- Xüsusiyyətlər siyahısı ---------- */
+.features {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--gray-50);
+  border-radius: 0.75rem;
+}
+
+.features__title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-800);
+  margin-bottom: 0.75rem;
+}
+
+.features__list {
+  padding-left: 1.25rem; /* list-inside */
+  list-style-type: disc;
+  font-size: 0.875rem;   /* text-sm */
+  color: var(--gray-600);
+}
+
+.features__list li + li {
+  margin-top: 0.5rem;    /* space-y-2 */
+}
