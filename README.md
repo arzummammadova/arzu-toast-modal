@@ -66,13 +66,8 @@ export default function App() {
 
 `arzu-toast-modal` ships with sensible defaults, but you can override styles via CSS variables or pass a custom `className` in the provider. See the [docs](./docs/customization.md) for details.
 
-## 🗺 Roadmap
 
-* [ ] Dark mode
-* [ ] Swipe‑to‑dismiss on mobile
-* [ ] Accessible announcements
 
-Feel free to open issues or PRs!
 
 ##
  © 2025 Arzu Məmmədova
