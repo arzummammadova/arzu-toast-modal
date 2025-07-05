@@ -1,15 +1,6 @@
 # arzu-toast-modal 🔔
 
 Beautiful and customizable toast component for React with smooth animations 🚀
-## 🎨 Design
-
-[Figma Design File (Click to view)](https://www.figma.com/community/file/1523304266707961935)
-
-## 🖼 Preview
-<img src="https://raw.githubusercontent.com/arzummammadova/arzu-toast-modal/main/src/assets/page.png" />
-
-<img src="./src/assets/page.png" alt="Toast Example 1" width="600" />
-<img src="./src/assets/page1.png" alt="Toast Example 2" width="600" />
 
 [![npm version](https://img.shields.io/npm/v/arzu-toast-modal.svg?style=flat-square)](https://www.npmjs.com/package/arzu-toast-modal)
 [![license](https://img.shields.io/github/license/arzummammadova/arzu-toast-modal.svg?style=flat-square)](LICENSE)
@@ -17,6 +8,16 @@ Beautiful and customizable toast component for React with smooth animations 🚀
 ## 📽 Demo
 
 [▶ Watch the video demo](https://drive.google.com/file/d/1-HoxjWySAnPu4-ZA-WBgJ1ANsTPQcBg6/view?usp=sharing)
+
+
+## 🎨 Design
+
+[Figma Design File (Click to view)](https://www.figma.com/community/file/1523304266707961935)
+
+## 🖼 Preview
+
+<img src="./src/assets/page.png" alt="Toast Example 1" width="600" />
+<img src="./src/assets/page1.png" alt="Toast Example 2" width="600" />
 
 <!-- If you create a GIF preview, place it in .github/demo.gif and uncomment the line below -->
 
@@ -75,13 +76,8 @@ export default function App() {
 
 `arzu-toast-modal` ships with sensible defaults, but you can override styles via CSS variables or pass a custom `className` in the provider. See the [docs](./docs/customization.md) for details.
 
-## 🗺 Roadmap
 
-* [ ] Dark mode
-* [ ] Swipe‑to‑dismiss on mobile
-* [ ] Accessible announcements
 
-Feel free to open issues or PRs!
 
 ##
  © 2025 Arzu Məmmədova
