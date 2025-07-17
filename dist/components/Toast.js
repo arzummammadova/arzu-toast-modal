@@ -9,13 +9,12 @@ import infoSound from '../assets/sounds/info.mp3';
 export const Toast = ({ title = 'Notification', message, duration = 3000, type = 'info', position = 'top-right', onClose = () => { }, className = '', style = {}, playAudio = true, audioVolume = 0.5, }) => {
     const [isVisible, setIsVisible] = useState(true);
     const [shouldShake, setShouldShake] = useState(false);
-    // Səs faylları üçün bir map yaradın
     const audioMap = {
         success: successSound,
         error: errorSound,
         warning: warningSound,
         info: infoSound,
-    }; // ✨ Bu sətirdəki dəyişiklik!
+    };
     useEffect(() => {
         if (type === 'error' || type === 'warning') {
             setShouldShake(true);

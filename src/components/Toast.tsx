@@ -1,11 +1,5 @@
-// src/components/Toast.tsx
 import React, { useEffect, useState } from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
-import successSound from '../assets/sounds/success.mp3';
-import errorSound from '../assets/sounds/error.mp3';
-import warningSound from '../assets/sounds/warning.mp3';
-import infoSound from '../assets/sounds/info.mp3';
-
 
 export interface ToastProps {
   title?: string;
@@ -16,8 +10,6 @@ export interface ToastProps {
   onClose?: () => void;
   className?: string;
   style?: React.CSSProperties;
-  playAudio?: boolean;
-  audioVolume?: number;
 }
 
 export const Toast: React.FC<ToastProps> = ({
@@ -29,21 +21,9 @@ export const Toast: React.FC<ToastProps> = ({
   onClose = () => {},
   className = '',
   style = {},
-  playAudio = true,
-  audioVolume = 0.5,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [shouldShake, setShouldShake] = useState(false);
-
-  // Səs faylları üçün bir map yaradın
-  type ToastType = 'success' | 'error' | 'warning' | 'info';
-
-  const audioMap: { [key in ToastType]: string } = {
-    success: successSound,
-    error: errorSound,
-    warning: warningSound,
-    info: infoSound,
-  };
 
   useEffect(() => {
     if (type === 'error' || type === 'warning') {
@@ -51,25 +31,14 @@ export const Toast: React.FC<ToastProps> = ({
       const shakeTimer = setTimeout(() => {
         setShouldShake(false);
       }, 600);
-      
       return () => clearTimeout(shakeTimer);
     }
   }, [type]);
-
-  // Səsi çalmaq üçün useEffect
-  useEffect(() => {
-    if (playAudio && audioMap[type]) {
-      const audio = new Audio(audioMap[type]);
-      audio.volume = audioVolume;
-      audio.play().catch(e => console.error("Səs çalınarkən xəta baş verdi:", e));
-    }
-  }, [type, playAudio, audioVolume, audioMap]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(false);
     }, duration);
-
     return () => clearTimeout(timer);
   }, [duration]);
 
@@ -260,10 +229,6 @@ export const Toast: React.FC<ToastProps> = ({
           animation: `shrink ${duration}ms linear forwards`,
         }}
       />
-
-      {/* Səs faylının yuxarıda import olunduğunu güman edərək */}
-      {/* <audio src={successSound} autoPlay={playAudio} volume={audioVolume} /> */}
-      {/* Amma yuxarıda useEffect ilə dinamik çalmaq daha yaxşıdır */}
 
       <style>{`
         .success-bg {
