@@ -1,22 +1,21 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+// src/components/Toast.tsx
 import { useEffect, useState } from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
-import successSound from '../../src/assets/sounds/success.mp3';
-import errorSound from '../../src/assets/sounds/error.mp3';
-import warningSound from '../../src/assets/sounds/warning.mp3';
-import infoSound from '../../src/assets/sounds/info.mp3';
-export const Toast = ({ title = 'Notification', message, duration = 3000, type = 'info', position = 'top-right', onClose = () => { }, className = '', style = {}, playAudio = true, // Varsayılan olaraq səsi çal
-audioVolume = 0.5, // Varsayılan səs səviyyəsi (50%)
- }) => {
+import successSound from '../assets/sounds/success.mp3';
+import errorSound from '../assets/sounds/error.mp3';
+import warningSound from '../assets/sounds/warning.mp3';
+import infoSound from '../assets/sounds/info.mp3';
+export const Toast = ({ title = 'Notification', message, duration = 3000, type = 'info', position = 'top-right', onClose = () => { }, className = '', style = {}, playAudio = true, audioVolume = 0.5, }) => {
     const [isVisible, setIsVisible] = useState(true);
     const [shouldShake, setShouldShake] = useState(false);
     // Səs faylları üçün bir map yaradın
     const audioMap = {
         success: successSound,
-        error: errorSound, // Əgər import etmisinizsə
+        error: errorSound,
         warning: warningSound,
         info: infoSound,
-    };
+    }; // ✨ Bu sətirdəki dəyişiklik!
     useEffect(() => {
         if (type === 'error' || type === 'warning') {
             setShouldShake(true);
@@ -33,7 +32,7 @@ audioVolume = 0.5, // Varsayılan səs səviyyəsi (50%)
             audio.volume = audioVolume;
             audio.play().catch(e => console.error("Səs çalınarkən xəta baş verdi:", e));
         }
-    }, [type, playAudio, audioVolume, audioMap]); // Yalnız type dəyişdikdə və ya playAudio, audioVolume dəyişdikdə çal
+    }, [type, playAudio, audioVolume, audioMap]);
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);

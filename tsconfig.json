@@ -19,11 +19,14 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots": [ // ✨ Bu sətiri əlavə edin
+    "typeRoots": [
       "./node_modules/@types",
-      "./src/types" // ✨ Və bunu
+      "./src/types" // Bu sətir çox vacibdir!
     ]
   },
-  "include": ["src"], // 'src' qovluğundakı hər şeyi daxil edir, bu da media.d.ts-i avtomatik tapmalıdır
+  "include": [
+    "src",
+    "src/**/*.d.ts" // Bu sətir də çox vacibdir!
+  ],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.stories.tsx"]
 }

@@ -36,12 +36,14 @@ export const Toast: React.FC<ToastProps> = ({
   const [shouldShake, setShouldShake] = useState(false);
 
   // Səs faylları üçün bir map yaradın
-  const audioMap = { // Tipi birbaşa burda təyin etmək əvəzinə
+  type ToastType = 'success' | 'error' | 'warning' | 'info';
+
+  const audioMap: { [key in ToastType]: string } = {
     success: successSound,
     error: errorSound,
     warning: warningSound,
     info: infoSound,
-  } as { [key in ToastProps['type']]: string }; // ✨ Bu sətirdəki dəyişiklik!
+  };
 
   useEffect(() => {
     if (type === 'error' || type === 'warning') {
