@@ -1,6 +1,6 @@
 {
   "name": "arzu-toast-modal",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,6 @@
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  
   "keywords": [
     "react",
     "toast",
@@ -18,7 +17,6 @@
     "alert",
     "modal"
   ],
-
   "author": "Arzui <arzuuimammadova@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -26,7 +24,6 @@
     "lucide-react": "^0.525.0",
     "react-icons": "^5.5.0"
   },
-  
   "files": [
     "dist",
     "dist/assets"
