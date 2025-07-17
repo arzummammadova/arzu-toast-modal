@@ -18,10 +18,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "typeRoots": [ // ✨ Bu sətiri əlavə edin
+      "./node_modules/@types",
+      "./src/types" // ✨ Və bunu
+    ]
   },
-  "include": ["src",
-    "src/**/*.d.ts" // Ensure all declaration files in src are included
-],
+  "include": ["src"], // 'src' qovluğundakı hər şeyi daxil edir, bu da media.d.ts-i avtomatik tapmalıdır
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.stories.tsx"]
 }

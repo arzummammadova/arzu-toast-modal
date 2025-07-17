@@ -1,9 +1,10 @@
+// src/components/Toast.tsx
 import React, { useEffect, useState } from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
-import successSound from '../../src/assets/sounds/success.mp3';
-import errorSound from '../../src/assets/sounds/error.mp3';
-import warningSound from '../../src/assets/sounds/warning.mp3';
-import infoSound from '../../src/assets/sounds/info.mp3';
+import successSound from '../assets/sounds/success.mp3';
+import errorSound from '../assets/sounds/error.mp3';
+import warningSound from '../assets/sounds/warning.mp3';
+import infoSound from '../assets/sounds/info.mp3';
 
 
 export interface ToastProps {
@@ -15,8 +16,8 @@ export interface ToastProps {
   onClose?: () => void;
   className?: string;
   style?: React.CSSProperties;
-  playAudio?: boolean; // Yeni prop: səsin çalınmasını idarə etmək üçün
-  audioVolume?: number; // Yeni prop: səsin səsini idarə etmək üçün (0-1 arasında)
+  playAudio?: boolean;
+  audioVolume?: number;
 }
 
 export const Toast: React.FC<ToastProps> = ({
@@ -28,20 +29,19 @@ export const Toast: React.FC<ToastProps> = ({
   onClose = () => {},
   className = '',
   style = {},
-  playAudio = true, // Varsayılan olaraq səsi çal
-  audioVolume = 0.5, // Varsayılan səs səviyyəsi (50%)
+  playAudio = true,
+  audioVolume = 0.5,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [shouldShake, setShouldShake] = useState(false);
 
   // Səs faylları üçün bir map yaradın
-  const audioMap: { [key in ToastProps['type']]: string } = {
+  const audioMap = { // Tipi birbaşa burda təyin etmək əvəzinə
     success: successSound,
-    error: errorSound, // Əgər import etmisinizsə
+    error: errorSound,
     warning: warningSound,
     info: infoSound,
-  
-  };
+  } as { [key in ToastProps['type']]: string }; // ✨ Bu sətirdəki dəyişiklik!
 
   useEffect(() => {
     if (type === 'error' || type === 'warning') {
@@ -61,7 +61,7 @@ export const Toast: React.FC<ToastProps> = ({
       audio.volume = audioVolume;
       audio.play().catch(e => console.error("Səs çalınarkən xəta baş verdi:", e));
     }
-  }, [type, playAudio, audioVolume, audioMap]); // Yalnız type dəyişdikdə və ya playAudio, audioVolume dəyişdikdə çal
+  }, [type, playAudio, audioVolume, audioMap]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
