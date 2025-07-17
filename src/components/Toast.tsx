@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
 import successSound from '../../src/assets/sounds/success.mp3';
 import errorSound from '../../src/assets/sounds/error.mp3';
-import warningSound from '../assets/warning.mp3';
-import infoSound from '../assets/info.mp3';
+import warningSound from '../../src/assets/sounds/warning.mp3';
+import infoSound from '../../src/assets/sounds/info.mp3';
 
 
 export interface ToastProps {

@@ -20,6 +20,8 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"],
+  "include": ["src",
+    "src/**/*.d.ts" // Ensure all declaration files in src are included
+],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.stories.tsx"]
 }

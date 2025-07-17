@@ -8,6 +8,8 @@ export interface ToastProps {
     onClose?: () => void;
     className?: string;
     style?: React.CSSProperties;
+    playAudio?: boolean;
+    audioVolume?: number;
 }
 export declare const Toast: React.FC<ToastProps>;
 export default Toast;

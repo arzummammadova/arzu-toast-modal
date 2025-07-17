@@ -1,9 +1,22 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import { useEffect, useState } from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
-export const Toast = ({ title = 'Notification', message, duration = 3000, type = 'info', position = 'top-right', onClose = () => { }, className = '', style = {}, }) => {
+import successSound from '../../src/assets/sounds/success.mp3';
+import errorSound from '../../src/assets/sounds/error.mp3';
+import warningSound from '../../src/assets/sounds/warning.mp3';
+import infoSound from '../../src/assets/sounds/info.mp3';
+export const Toast = ({ title = 'Notification', message, duration = 3000, type = 'info', position = 'top-right', onClose = () => { }, className = '', style = {}, playAudio = true, // Varsayılan olaraq səsi çal
+audioVolume = 0.5, // Varsayılan səs səviyyəsi (50%)
+ }) => {
     const [isVisible, setIsVisible] = useState(true);
     const [shouldShake, setShouldShake] = useState(false);
+    // Səs faylları üçün bir map yaradın
+    const audioMap = {
+        success: successSound,
+        error: errorSound, // Əgər import etmisinizsə
+        warning: warningSound,
+        info: infoSound,
+    };
     useEffect(() => {
         if (type === 'error' || type === 'warning') {
             setShouldShake(true);
@@ -13,6 +26,14 @@ export const Toast = ({ title = 'Notification', message, duration = 3000, type =
             return () => clearTimeout(shakeTimer);
         }
     }, [type]);
+    // Səsi çalmaq üçün useEffect
+    useEffect(() => {
+        if (playAudio && audioMap[type]) {
+            const audio = new Audio(audioMap[type]);
+            audio.volume = audioVolume;
+            audio.play().catch(e => console.error("Səs çalınarkən xəta baş verdi:", e));
+        }
+    }, [type, playAudio, audioVolume, audioMap]); // Yalnız type dəyişdikdə və ya playAudio, audioVolume dəyişdikdə çal
     useEffect(() => {
         const timer = setTimeout(() => {
             setIsVisible(false);
