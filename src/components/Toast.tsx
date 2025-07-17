@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Check, X, AlertTriangle, Info } from 'lucide-react';
+import successSound from '../../src/assets/sounds/success.mp3';
+import errorSound from '../../src/assets/sounds/error.mp3';
+import warningSound from '../assets/warning.mp3';
+import infoSound from '../assets/info.mp3';
+
 
 export interface ToastProps {
   title?: string;
@@ -10,6 +15,8 @@ export interface ToastProps {
   onClose?: () => void;
   className?: string;
   style?: React.CSSProperties;
+  playAudio?: boolean; // Yeni prop: səsin çalınmasını idarə etmək üçün
+  audioVolume?: number; // Yeni prop: səsin səsini idarə etmək üçün (0-1 arasında)
 }
 
 export const Toast: React.FC<ToastProps> = ({
@@ -21,9 +28,20 @@ export const Toast: React.FC<ToastProps> = ({
   onClose = () => {},
   className = '',
   style = {},
+  playAudio = true, // Varsayılan olaraq səsi çal
+  audioVolume = 0.5, // Varsayılan səs səviyyəsi (50%)
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [shouldShake, setShouldShake] = useState(false);
+
+  // Səs faylları üçün bir map yaradın
+  const audioMap: { [key in ToastProps['type']]: string } = {
+    success: successSound,
+    error: errorSound, // Əgər import etmisinizsə
+    warning: warningSound,
+    info: infoSound,
+  
+  };
 
   useEffect(() => {
     if (type === 'error' || type === 'warning') {
@@ -35,6 +53,15 @@ export const Toast: React.FC<ToastProps> = ({
       return () => clearTimeout(shakeTimer);
     }
   }, [type]);
+
+  // Səsi çalmaq üçün useEffect
+  useEffect(() => {
+    if (playAudio && audioMap[type]) {
+      const audio = new Audio(audioMap[type]);
+      audio.volume = audioVolume;
+      audio.play().catch(e => console.error("Səs çalınarkən xəta baş verdi:", e));
+    }
+  }, [type, playAudio, audioVolume, audioMap]); // Yalnız type dəyişdikdə və ya playAudio, audioVolume dəyişdikdə çal
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -231,6 +258,10 @@ export const Toast: React.FC<ToastProps> = ({
           animation: `shrink ${duration}ms linear forwards`,
         }}
       />
+
+      {/* Səs faylının yuxarıda import olunduğunu güman edərək */}
+      {/* <audio src={successSound} autoPlay={playAudio} volume={audioVolume} /> */}
+      {/* Amma yuxarıda useEffect ilə dinamik çalmaq daha yaxşıdır */}
 
       <style>{`
         .success-bg {
